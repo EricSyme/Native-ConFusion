@@ -5,7 +5,6 @@ import { DISHES } from '../shared/dishes';
 
 
 function RenderDish(props) {
-
     const dish = props.dish;
     
     if (dish != null) {
@@ -25,7 +24,6 @@ function RenderDish(props) {
 }
 
 class DishDetail extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -44,7 +42,5 @@ class DishDetail extends Component {
         );
     }
 }
-
-export default DishDetail;
 
 export default DishDetail;
