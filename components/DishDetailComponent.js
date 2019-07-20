@@ -133,6 +133,7 @@ class DishDetail extends Component {
                     onPress={() => this.markFavorite(dishId)} 
                     onShowModal={() => this.toggleModal()}
                     />
+
                 <RenderComments comments={this.props.comments.comments.filter((comment) => comment.dishId === dishId)} />
                 <Modal animationType={"slide"} transparent={false}
                     visible={this.state.showModal}
@@ -141,11 +142,8 @@ class DishDetail extends Component {
                         <Rating
                             showRating
                             type="star"
-                            startingValue={5}
-                            imageSize={40}
-                            onFinishRating={(rating) => { this.setState({ rating: rating })}}
-                            onStartRating={this.ratingStarted}
-                            style={{ paddingVertical: 10 }}
+                            startingValue={this.state.rating}
+                            onFinishRating={(rating) => {this.setState({ rating: rating })}}
                         />
                         <Input
                             placeholder='Author'
@@ -172,7 +170,7 @@ class DishDetail extends Component {
                             <Button 
                                 onPress={() => { this.toggleModal(); this.resetForm(); }}
                                 color="grey"
-                                title="Close"
+                                title="Cancel"
                             />
                         </View>
                     </View>

@@ -12,7 +12,6 @@ import { fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/
 import Reservation from './ReservationComponent';
 
 
-
 const mapStateToProps = state => {
   return {
   }
