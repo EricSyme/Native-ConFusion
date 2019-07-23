@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Text, ScrollView } from 'react-native';
 import { Card } from 'react-native-elements';
-import { renderComponent } from 'recompose';
+import * as Animatable from 'react-native-animatable';
+
 
 
 function RenderItem() {
     return(
-        <Card title="Contact Information">
-            <Text style={{margin: 10, textAlign: 'left'}}>{`
+        <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>                
+            <Card title='Contact Information'>
+                <Text style={{margin: 10, textAlign: 'left'}}>{`
 121, Clear Water Bay Road
 
 Clear Water Bay, Kowloon
@@ -20,8 +22,9 @@ Fax: +852 8765 4321
 
 Email:confusion@food.net
                 `}
-            </Text>
-        </Card>
+                </Text>
+            </Card>
+        </Animatable.View>
     );
 }
 
