@@ -1,6 +1,11 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
+export const deleteFavorite = (dishId) => ({
+    type: ActionTypes.DELETE_FAVORITE,
+    payload: dishId
+}); 
+
 export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
     payload: comment
