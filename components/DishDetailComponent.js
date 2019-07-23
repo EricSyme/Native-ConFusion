@@ -151,7 +151,6 @@ class DishDetail extends Component {
                             onChangeText={(text) => this.setState({ author: text })} value={this.state.author}
                         />
                         <Input
-                    
                             placeholder='Comment'
                             leftIcon={{ type: 'font-awesome', name: 'comment-o', margin: 10 }}
                             onChangeText={(text) => this.setState({ comment: text })} value={this.state.comment}
