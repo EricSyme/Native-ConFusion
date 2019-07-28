@@ -47,17 +47,15 @@ class Login extends Component {
             <View style={styles.container}>
                 <Input
                     placeholder="Username"
-                    leftIcon={{ type: 'font-awesome', name: 'user-o' }}
+                    leftIcon={{ type: 'font-awesome', name: 'user-o', margin: 40 }}
                     onChangeText={(username) => this.setState({username})}
                     value={this.state.username}
-                    containerStyle={styles.formInput}
                     />
                 <Input
                     placeholder="Password"
-                    leftIcon={{ type: 'font-awesome', name: 'key' }}
+                    leftIcon={{ type: 'font-awesome', name: 'key', margin: 40 }}
                     onChangeText={(password) => this.setState({password})}
                     value={this.state.password}
-                    containerStyle={styles.formInput}
                     />
                 <CheckBox title="Remember Me"
                     center
@@ -81,7 +79,7 @@ class Login extends Component {
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        margin: 20,
+        margin: 20
     },
     formInput: {
         margin: 40
