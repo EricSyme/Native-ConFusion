@@ -94,25 +94,26 @@ class LoginTab extends Component {
                         />
                 </View>
                 <View style={styles.formButton}>
-                    <Button
-                        onPress={() => this.handleRegister()}
+                <Button
+                        onPress={() => this.props.navigation.navigate('Register')}
                         title="Register"
+                        type="clear"
                         icon={
                             <Icon
                                 name='user-plus'
                                 type='font-awesome'            
                                 size={24}
-                                color= 'white'
+                                color= 'blue'
                             />
                         }
-                        buttonStyle={{
-                            backgroundColor: "#512DA8"
+                        titleStyle={{
+                            color: "blue"
                         }}
                         />
                 </View>
             </View>
         </ScrollView>
-        
+
         );
     }
 
@@ -131,22 +132,6 @@ class RegisterTab extends Component {
             email: '',
             remember: false,
             imageUrl: baseUrl + 'images/logo.png'
-        }
-    }
-
-    getImageFromCamera = async () => {
-        const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
-        const cameraRollPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
-        if (cameraPermission.status === 'granted' && cameraRollPermission.status === 'granted') {
-            let capturedImage = await ImagePicker.launchCameraAsync({
-                allowsEditing: true,
-                aspect: [4, 3],
-            });
-            if (!capturedImage.cancelled) {
-                console.log(capturedImage);
-                this.setState({imageUrl: capturedImage.uri });
-            }
         }
     }
     
