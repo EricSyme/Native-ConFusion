@@ -54,6 +54,7 @@ class LoginTab extends Component {
 
     render() {
         return (
+        <ScrollView>
             <View style={styles.container}>
                 <Input
                     placeholder="Username"
@@ -94,22 +95,24 @@ class LoginTab extends Component {
                 </View>
                 <View style={styles.formButton}>
                     <Button
-                        onPress={() => this.props.navigation.navigate('Register')}
+                        onPress={() => this.handleRegister()}
                         title="Register"
                         icon={
                             <Icon
                                 name='user-plus'
                                 type='font-awesome'            
                                 size={24}
-                                color= 'blue'
+                                color= 'white'
                             />
                         }
-                        titleStyle={{
-                            color: "blue"
+                        buttonStyle={{
+                            backgroundColor: "#512DA8"
                         }}
                         />
                 </View>
             </View>
+        </ScrollView>
+        
         );
     }
 
@@ -161,7 +164,6 @@ class RegisterTab extends Component {
                 this.processImage(capturedImage.uri);
             }
         }
-
     }
 
     processImage = async (imageUri) => {
